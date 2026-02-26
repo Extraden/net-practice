@@ -2,126 +2,107 @@
 
 # NetPractice
 
-A practical 42 project focused on learning core networking logic through small troubleshooting exercises.
-
-## Table of Contents
-- [Description](#description)
-- [Instructions](#instructions)
-- [Resources](#resources)
-- [Evaluation Notes](#evaluation-notes)
-- [Repository Layout](#repository-layout)
-
 ## Description
-NetPractice is a training project designed to build a practical understanding of basic computer networking.
 
-The project consists of **10 levels**, each showing a broken simulated network. Your job is to make the network work again by correcting the available values: mainly **IP addresses**, **subnet masks**, and **default gateways**. As the levels progress, the exercises reinforce how communication works inside a subnet, when a router is needed, and how traffic reaches another network.
+NetPractice is a practical introduction to computer networking built around 10 small training levels.
 
-This project is less about memorizing theory and more about developing the reflex to reason about:
-- whether two devices are in the same subnet,
-- which address is reachable directly,
-- when traffic must go through a gateway,
-- and how routers and switches fit into packet delivery.
+The goal of the project is to understand how a network works by fixing broken simulated configurations. Each level requires the learner to make communication possible by setting the correct values for IP addresses, subnet masks, and default gateways.
+
+Through these exercises, the project develops a practical understanding of local communication inside the same subnet, communication between different subnets, and the role of routing in making a network function properly.
 
 ## Instructions
-### 1. Run the training interface
+
+### Running the training interface
+
 1. Download the files attached to the NetPractice project page.
-2. Extract them into any folder.
+2. Extract them into any folder of your choice.
 3. From that folder, run:
 
 ```bash
 ./run.sh
 ```
 
-This starts a local web server and opens the NetPractice interface in your browser.
+This script launches a local web server and opens the training interface in your web browser.
 
-### 2. Manual launch (if `run.sh` does not work)
-If the script does not work correctly, start the interface manually:
+### Manual launch
+
+If `run.sh` does not work properly, you can start the interface manually by running:
 
 ```bash
 python3 -m http.server 49242
 ```
 
-Then open:
+Then open the following address in your browser:
 
 ```text
 http://localhost:49242
 ```
 
-You may choose another port if needed.
+You may use another port if needed.
 
-### 3. Use the interface
-- Enter your **42 login** to use your personal configuration.
+### Using the interface
+
+- Enter your 42 login to use your personal configuration.
 - You can also use the **evaluation** tab to generate a random configuration.
-- Each level displays one broken network and one or more goals.
-- Modify the available fields until the network becomes valid.
-- Use **Check again** to verify your solution.
+- Each level shows a non-working network and one or more goals to complete.
+- Modify the available fields until the network works correctly.
+- Use **Check again** to verify your configuration.
 - Use **Get my config** to export the current level configuration.
-- Once a level is solved, continue with **Next level**.
+- Before moving to the next level, export the file for the level you have just completed.
 
-### 4. Export configurations and submit correctly
-- Complete all **10 levels**.
-- Before moving to the next level, export the current one with **Get my config**.
-- Export **one file per level**.
-- Place all **10 exported configuration files** at the **root of the repository**.
-- Keep **README.md** at the repository root as well.
-- Only files present in the repository will be evaluated.
+### Exporting configurations
 
-### 5. Important submission reminder
-Do not forget to enter your **42 login** in the interface before exporting your files.
+A configuration file must be exported for each level using the **Get my config** button.
+
+Do not skip this step before going to the next level, because the exported files are required for submission.
+
+## Submission details
+
+For submission, you must place **10 exported configuration files** - **one per level** - at the **root of the repository**.
+
+- Do not place them inside a subdirectory.
+- Use the exact files exported by the NetPractice interface.
+- Only files present in the repository will be evaluated during the defense.
+- Make sure you enter your login in the training interface before exporting the files.
 
 ## Resources
-### Networking concepts covered
-This project explicitly studies and applies the following topics:
-- TCP/IP addressing
-- IPv4 addressing
-- Subnet masks
-- Network part vs host part of an address
-- Default gateways
-- Direct communication inside the same subnet
-- Routing between different subnets
-- Routers
-- Switches
-- Basic forwarding logic
-- OSI layers, especially the relationship between addressing, routing, and lower-level delivery
 
 ### Classic references
-- **RFC 791** - Internet Protocol
-- **RFC 950** - Internet Standard Subnetting Procedure
-- Cisco Networking Academy materials on IPv4, subnetting, switching, and routing
-- MDN networking overviews for beginner-friendly explanations
-- Practical subnetting tutorials and IPv4 calculators for training and self-checking
+
+- RFC 791 - Internet Protocol (IPv4)
+- RFC 950 - Internet Standard Subnetting Procedure
+- Cisco Networking Academy materials on IPv4 addressing, subnetting, switching, and routing
+- Introductory networking documentation and tutorials covering TCP/IP fundamentals
+- IPv4 subnetting practice material and subnet calculators for self-checking
+
+### Networking concepts studied
+
+This project is based on the following networking concepts:
+
+- TCP/IP addressing
+- IPv4 addresses
+- Subnet masks
+- Network and host portions of an address
+- Default gateways
+- Routers
+- Switches
+- Communication inside the same subnet
+- Communication between different subnets
+- Basic routing logic
+- OSI layers, especially the concepts related to switching and routing
 
 ### How AI was used
-AI was used only as a support tool for:
-- clarifying networking concepts,
-- checking explanations about subnetting and routing logic,
-- and helping draft this README in a cleaner and more readable format.
 
-AI was **not** used as a substitute for understanding the project. Any AI-generated explanation or text should be reviewed, verified, and fully understood before submission.
+AI was used as a support tool for:
 
-## Evaluation Notes
-During peer evaluation, you will be asked to complete **three random levels** within a limited time.
+- clarifying networking theory such as subnet masks, default gateways, and routing decisions
+- helping explain mistakes found while solving the training levels
+- improving the wording and structure of this README
 
-External tools are not allowed during the evaluation. A simple calculator such as `bc` is tolerated, but that is the limit.
+AI was not used as a substitute for understanding. All explanations and exported configurations were reviewed and verified manually.
 
-Because of that, the goal is not only to save valid exported files, but also to genuinely understand how subnetting, addressing, and gateways work.
+## Peer-evaluation note
 
-## Repository Layout
-Example structure:
+During the defense, you will have to complete **three random levels** within a limited time.
 
-```text
-.
-├── README.md
-├── level1.json
-├── level2.json
-├── level3.json
-├── level4.json
-├── level5.json
-├── level6.json
-├── level7.json
-├── level8.json
-├── level9.json
-└── level10.json
-```
-
-> Replace the example filenames above with the exact filenames exported by the NetPractice interface.
+External tools are not allowed during evaluation. A simple calculator such as `bc` is tolerated, but no more than that.
